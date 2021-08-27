@@ -17,6 +17,6 @@ public class BookController {
     })
     @GetMapping
     public String hello(){
-        return "Bem vindo a Bookstore.";
+        return "Hello Bookstore, I am running an example.";
     }
 }
