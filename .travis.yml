@@ -5,10 +5,13 @@ jdk: oraclejdk8
 install: true
 addons:
   sonarcloud:
-    organization: $SONAR_ORGANIZATION
-    token: $SONAR_TOKEN
+    organization: "joseph-org"
+    token:
+      secure: "**************************"
+
 script:
-  - mvn clean package sonar:sonar -P sonar
+  # the following command line builds the project, runs the tests with coverage and then execute the SonarCloud analysis
+  - mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent install sonar:sonar
 cache:
   directories:
     - $HOME/.m2
